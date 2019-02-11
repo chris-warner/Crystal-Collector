@@ -8,49 +8,86 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Staatliches" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>CrystalsCollector!</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row Row-Header">
-            <div class="header-col-title col-xs-5">
-                <h1>Crystal Collector</h1>
-            </div>
-            <div class="header-col-blank col-xs-7"></div>
+
+    <div class="row Row-Header">
+        <div class="header-col-title col-md-12">
+            <h1 id="title">Crystal Collector</h1>
         </div>
-        <div class="row Row Instructions">
-            <div class=" body-col-instructions col-xs-12">
-                <p>Instructions: <br> You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal you will add a specific amoutnt of poiunts to your total score. You win the game by matching your total
-                    score to radom number, oyu have the if you total score goes abouve tht random numbner. The valure of each crystal is hidden from you until your click on it. Eachtime when the game starts, the game will change the values of each crystal.
-                </p>
-            </div>
+    </div>
+    <div class="row Row Instructions">
+        <div class=" body-col-instructions col-xs-12">
+            <p>Instructions: <br> You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal you will add a specific amoutnt of poiunts to your total score. You win the game by matching your total
+                score to radom number, oyu have the if you total score goes abouve tht random numbner. The valure of each crystal is hidden from you until your click on it. Eachtime when the game starts, the game will change the values of each crystal.
+            </p>
         </div>
-        <div class="row Row-targetNumber-wins-losses">
-            <div class="col-blank col-xs-3"></div>
-            <div class="col-target col-xs-5 col-lg-4">
-                <!--  TARGETNUMBER -->
-                <p class="targetnumber"></p>
-            </div>
-            <div class="col-wins col-xs-2">
-                <p class="wins">Wins:</p>
-            </div>
-            <div class="col-losses col-xs-2">
-                <p class="losses">Losses: </p>
-            </div>
+    </div>
+
+    <div class="row Row-targetNumber-wins-losses">
+
+
+        <div class="col-target col-xs-12 col-md-5 col-lg-4">
+            <!--  TARGETNUMBER -->
+            <h2 class="targetnumber"></h2>
         </div>
-        <div class="row Row-Crystals">
-            <div class="col-blank col-xs-2"></div>
-            <div class="col-Crystal-1 col-xs-2"><button class="btnCrystal1"><span id="crystal-1"></span></button></button>
-            </div>
-            <div class="col-Crystal-2 col-xs-2"><button class="btnCrystal2"><span id="crystal-2"></span></button></button>
-            </div>
-            <div class="col-Crystal-3 col-xs-2"><button class="btnCrystal3"><span id="crystal-3"></span></button></div>
-            <div class="col-Crystal-4 col-xs-2"><button class="btnCrystal4"><span id="crystal-4"></span></button></button>
-            </div>
-            <div class="col-blank col-xs-2"></div>
+
+        <div class="col-blank col-xs-3 col-md-2 col-lg-2"></div>
+        <div class="col-wins col-xs-4 col-lg-4"></div>
+        <h2 class="wins">Wins:</h2>
+    </div>
+    <div class="col-losses col-xs-4 col-lg-4">
+        <h2 class="losses">Losses: </h2>
+    </div>
+    </div>
+
+
+    <div class="col-blank col-xs-0 col-md-5 "></div>
+    <div class="row">
+        <div class="col-totalscore title col-sm-7 col-md-5 col-lg-4">
+            <h2 class="ptotalscore">Your total score is: </h2>
         </div>
+        <div class="blank col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-totalscore col-md-3 col-lg-4"></div>
+        <div class="blank col-md-7"></div>
+    </div>
+    <div class="row"></div>
+    <div class="row Row-Crystals crystalRow " id="crystals">
+        <div class="col-blank col-md-2 col-xs-0 col-lg-2"></div>
+
+        <div class="col-Crystal-1 col-md-2 col-lg-2">
+            <button class="btnCrystal1"><img src="assets/images/crystal_purple.png">
+            <p class = "pCrystal1">Hidden</p></img>
+                    <span id="crystal-1"></span>
+                    </button>
+        </div>
+        <div class="col-Crystal-2  col-md-2 col-lg-2">
+            <button class="btnCrystal2"><img src="assets/images/crystal_red.png"></img>
+            <p class="pCrystal2">Hidden</p>
+                <span id="crystal-2"></span>
+                </button>
+        </div>
+        <div class="col-Crystal-3  col-md-2 col-lg-2">
+            <button class="btnCrystal3"><img src="assets/images/crystal_blue.png"></img>
+                    <p class="pCrystal3">Hidden</p>
+                    <span id="crystal-3"></span>
+                </button>
+        </div>
+        <div class="col-Crystal-4  col-md-2 col-lg-2">
+            <button class="btnCrystal4"><img src="assets/images/crystal_yellow.png"></img>
+                <p class="pCrystal4">Hidden</p>
+                <span id="crystal-4"></span>
+            </button>
+        </div>
+        <div class="col-blank col-md-2 col-xs-0 col-lg-2"></div>
+
+    </div>
 
     </div>
     <!-- JS-JQ-LINKS -->
