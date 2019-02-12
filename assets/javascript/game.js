@@ -3,7 +3,7 @@ var losses = 0;
 var randomCrystal
 var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 var crystals = [];
-var RandomNumberBucket;
+var randomnumberBucket;
 var isClicked = false;
 var targetGoal;
 var score = 0;
