@@ -13,7 +13,15 @@ $(document).ready(function() {
 
     newgame();
 
-    $(".btnCrystal1").unbind("click").click(function() {
+    var crystal = {
+        score:0,
+        settimeout: setTimeout(function()
+        {
+            $(".pCrystal1").text( "Hidden" );
+        },timervalue())
+    }
+
+    $(".btnCrystal1").click(function() {
         addtoscore(0);
         $(".pCrystal1").text(crystals[0]);
         setTimeout(function() {
@@ -21,7 +29,7 @@ $(document).ready(function() {
         }, timervalue());
     });
 
-    $(".btnCrystal2").unbind("click").click(function() {
+    $(".btnCrystal2").click(function() {
         addtoscore(1);
         $(".pCrystal2").text(crystals[1]);
         setTimeout(function() {
@@ -29,7 +37,7 @@ $(document).ready(function() {
         }, timervalue());
     });
 
-    $(".btnCrystal3").unbind("click").click(function() {
+    $(".btnCrystal3").click(function() {
         addtoscore(2);
         $(".pCrystal3").text(crystals[2]);
         setTimeout(function() {
@@ -37,7 +45,7 @@ $(document).ready(function() {
         }, timervalue());
     });
 
-    $(".btnCrystal4").unbind("click").click(function() {
+    $(".btnCrystal4").click(function() {
         addtoscore(3);
         $(".pCrystal4").text(crystals[3]);
         setTimeout(function() {
@@ -101,9 +109,10 @@ $(document).ready(function() {
 
     function reset() {
         score = 0;
-
         generateNewTargetGoal();
         updatescore(0);
+        newCrystal();
+        newgame();
     }
 
 });
