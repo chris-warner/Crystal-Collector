@@ -1,48 +1,47 @@
 var wins = 0;
 var losses = 0;
-var randomCrystal
 var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-var crystals = [];
-var randomnumberBucket;
-var isClicked = false;
 var targetGoal;
 var score = 0;
-var i;
 
 $(document).ready(function() {
 
-    newgame();
-
-    $(".btnCrystal1").click(function() {
-        addtoscore(0);
-        $(".pCrystal1").text(crystals[0]);
+//Crystal Constructor
+var Crystal = function crystal (crystal){
+    this.hiddenValue = newCrystal();
+    this.timer = function timer() {
+    $(crystal).text(this.hiddenValue);
         setTimeout(function() {
-            $(".pCrystal1").text("Hidden");
+        $(crystal).text("Hidden");
         }, timervalue());
-    });
+    };
+}
+
+var crystal1 = new Crystal( ".pCrystal1" );
+var crystal2 = new Crystal( ".pCrystal2" );
+var crystal3 = new Crystal( ".pCrystal3" );
+var crystal4 = new Crystal( ".pCrystal4" );
+
+      newgame();
+
+      $(".btnCrystal1").click(function() {
+          addtoscore(crystal1.hiddenValue);
+          crystal1.timer();
+      });
 
     $(".btnCrystal2").click(function() {
-        addtoscore(1);
-        $(".pCrystal2").text(crystals[1]);
-        setTimeout(function() {
-            $(".pCrystal2").text("Hidden");
-        }, timervalue());
+        addtoscore(crystal2.hiddenValue);
+        crystal2.timer();
     });
 
     $(".btnCrystal3").click(function() {
-        addtoscore(2);
-        $(".pCrystal3").text(crystals[2]);
-        setTimeout(function() {
-            $(".pCrystal3").text("Hidden");
-        }, timervalue());
+        addtoscore(crystal3.hiddenValue);
+        crystal3.timer();
     });
 
     $(".btnCrystal4").click(function() {
-        addtoscore(3);
-        $(".pCrystal4").text(crystals[3]);
-        setTimeout(function() {
-            $(".pCrystal4").text("Hidden");
-        }, timervalue());
+        addtoscore(crystal4.hiddenValue);
+        crystal4.timer();
     });
 
     function newCrystal() {
@@ -53,12 +52,12 @@ $(document).ready(function() {
 
     function newgame() {
         //Generate a random value between 1 and 12 to each crystal.
-        crystals[0] = newCrystal();
-        crystals[1] = newCrystal();
-        crystals[2] = newCrystal();
-        crystals[3] = newCrystal();
-        //New Target Number
         generateNewTargetGoal();
+        //generate new crystals
+        crystal1 = new Crystal( ".pCrystal1" );
+        crystal2 = new Crystal( ".pCrystal2" );
+        crystal3 = new Crystal( ".pCrystal3" );
+        crystal4 = new Crystal( ".pCrystal4" );
     }
 
     function timervalue() {
@@ -71,7 +70,7 @@ $(document).ready(function() {
     }
 
     function addtoscore(crystalclicked) {
-        score = score + crystals[crystalclicked];
+        score = score + crystalclicked ;
         updatescore(score);
         if (score === targetGoal) {
             wingame();
@@ -104,5 +103,4 @@ $(document).ready(function() {
         newCrystal();
         newgame();
     }
-
 });
