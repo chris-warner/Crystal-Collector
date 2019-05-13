@@ -13,14 +13,6 @@ $(document).ready(function() {
 
     newgame();
 
-    var crystal = {
-        score:0,
-        settimeout: setTimeout(function()
-        {
-            $(".pCrystal1").text( "Hidden" );
-        },timervalue())
-    }
-
     $(".btnCrystal1").click(function() {
         addtoscore(0);
         $(".pCrystal1").text(crystals[0]);
