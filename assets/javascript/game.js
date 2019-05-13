@@ -48,7 +48,6 @@ $(document).ready(function() {
     function newCrystal() {
         //math for generating random number.
         var choice = crystalValues[Math.floor(Math.random() * crystalValues.length)];
-        console.log(choice);
         return choice;
     }
 
@@ -74,7 +73,6 @@ $(document).ready(function() {
     function addtoscore(crystalclicked) {
         score = score + crystals[crystalclicked];
         updatescore(score);
-        console.log(score);
         if (score === targetGoal) {
             wingame();
         }
