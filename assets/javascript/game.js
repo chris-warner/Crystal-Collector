@@ -13,7 +13,7 @@ var Crystal = function crystal (crystal){
     $(crystal).text(this.hiddenValue);
         setTimeout(function() {
         $(crystal).text("Hidden");
-        }, timervalue());
+        }, 1000);
     };
 }
 
@@ -44,12 +44,6 @@ var crystal4 = new Crystal( ".pCrystal4" );
         crystal4.timer();
     });
 
-    function newCrystal() {
-        //math for generating random number.
-        var choice = crystalValues[Math.floor(Math.random() * crystalValues.length)];
-        return choice;
-    }
-
     function newgame() {
         //Generate a random value between 1 and 12 to each crystal.
         generateNewTargetGoal();
@@ -58,10 +52,6 @@ var crystal4 = new Crystal( ".pCrystal4" );
         crystal2 = new Crystal( ".pCrystal2" );
         crystal3 = new Crystal( ".pCrystal3" );
         crystal4 = new Crystal( ".pCrystal4" );
-    }
-
-    function timervalue() {
-        return 1000;
     }
 
     function generateNewTargetGoal() {
