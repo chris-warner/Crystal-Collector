@@ -69,6 +69,12 @@ var crystal4 = new Crystal( ".pCrystal4" );
             losegame();
         }
     }
+    
+    function newCrystal() {
+        //math for generating random number.
+        var choice = crystalValues[Math.floor(Math.random() * crystalValues.length)];
+        return choice;
+    }
 
     function updatescore(inputvalue1) {
         $(".ptotalscore").text("Your total score is: " + inputvalue1.toString());
